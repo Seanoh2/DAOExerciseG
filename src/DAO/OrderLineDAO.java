@@ -25,9 +25,9 @@ public class OrderLineDAO extends DAO implements OrderLineDAOInterface {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        OrderDAO orderDAO = null;
-        ProductDAO productDAO = null;
-        OrderLine orderLine = null;
+        OrderDAO orderDAO = new OrderDAO();
+        ProductDAO productDAO = new ProductDAO();
+        OrderLine orderLine = new OrderLine();
         ArrayList<OrderLine> orderLines = new ArrayList();
 
         try {

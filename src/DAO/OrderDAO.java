@@ -84,11 +84,12 @@ public class OrderDAO extends DAO implements OrderDAOInterface {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Order order = null;
+        Order order = new Order();
 
         try {
             con = getConnection();
             String query = "SELECT * FROM orders WHERE orderNumber = ?";
+            ps = con.prepareStatement(query);
 
             ps.setInt(1, orderNumber);
 
